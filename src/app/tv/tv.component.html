@@ -1,0 +1,11 @@
+<div *ngIf="tv" class="row">
+    <div *ngFor="let item of tv" class="col-md-2">
+        <div class="item position-relative">
+            <img class="w-100" [src]="imgSrc + item.poster_path" alt="">
+            <h2>{{item.name}}</h2>
+            <div class="vote position-absolute top-0">
+                <p class="bg-info p-1">{{item.vote_average}}</p>
+            </div>
+        </div>
+    </div>
+</div>

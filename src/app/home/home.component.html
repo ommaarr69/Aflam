@@ -1,0 +1,65 @@
+
+<div class="row">
+    <div class="col-md-4 m-auto">
+        <div class="border">
+        </div>
+        <h2>Trending Movies To Watch Now</h2>
+        <div class="border w-100"></div>
+    </div>
+    <div *ngFor="let item of movies" class="col-md-2">
+        <a href="" class="text-decoration-none text-white">
+            <div class="item position-relative">
+                <img class="w-100" [src]="imgSrc + item.poster_path" alt="">
+
+                <h2>{{item.title}}</h2>
+
+                <div class="vote position-absolute top-0">
+                    <p class="bg-info p-1">{{item.vote_average}}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="row pt-5 gy-3">
+    <div class="col-md-4 m-auto">
+        <div class="border"></div>
+        <h2>Trending Tvs To Watch Now</h2>
+        <div class="border w-100"></div>
+    </div>
+    <div *ngFor="let item of tv" class="col-md-2">
+        <a href="" class="text-decoration-none text-white">
+            <div class="item position-relative">
+                <img class="w-100" [src]="imgSrc + item.poster_path" alt="">
+                <h2>{{item.name}}</h2>
+                <div class="vote position-absolute top-0">
+                    <p class="bg-info p-1">{{item.vote_average}}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="row gy-3 pt-5">
+    <div class="col-md-4 m-auto">
+        <div class="border">
+        </div>
+        <h2>Trending people To Watch Now</h2>
+        <div class="border w-100"></div>
+    </div>
+    <div *ngFor="let item of person" class="col-md-2">
+        <a href="" class="text-decoration-none text-white">
+            <div class="item position-relative">
+                <img class="w-100" *ngIf="item.profile_path" [src]="imgSrc + item.profile_path">
+                <h2>{{item.name}}</h2>
+                <div class="vote position-absolute top-0">
+                    <p class="bg-info p-1">{{item.popularity}}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

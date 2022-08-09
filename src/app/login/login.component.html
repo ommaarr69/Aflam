@@ -1,0 +1,26 @@
+<form [formGroup]="loginForm" class="text-white" (ngSubmit)="submitData(loginForm)">
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{errorMessage}}
+    </div>
+    
+    <label for="email">Email</label>
+    <input formControlName="email" class="form-control" id="email">
+    <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched"
+        class="alert alert-danger my-2">
+        <p *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</p>
+        <p *ngIf="loginForm.get('email')?.errors?.['email']">Email is Invalid </p>
+    </div>
+
+    <label for="password">Password</label>
+    <input formControlName="password" class="form-control" id="password">
+    <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched"
+        class="alert alert-danger my-2">
+        <p *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</p>
+        <p
+            *ngIf="loginForm.get('password')?.errors?.['minLength'] && loginForm.get('password')?.errors?.['maxlength']">
+            Password is minlength 3 and max 10</p>
+        <p *ngIf="loginForm.get('password')?.errors?.['pattern']">Password must contain A,a@</p>
+    </div>
+
+    <button [disabled]="loginForm.invalid" type="submit" class="btn btn-info">Login</button>
+</form>
