@@ -23,10 +23,11 @@ export class AuthService {
   encodedData() {
 
     let decoded = JSON.stringify(localStorage.getItem('userToken'));
+    
     this.userData.next(jwtDecode(decoded));
+
     console.log(this.userData.getValue());
     
-
   }
   register(formUserData: object): Observable<any> {
     return this._HttpClient.post(`https://route-egypt-api.herokuapp.com/signup`, formUserData)

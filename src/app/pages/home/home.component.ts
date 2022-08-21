@@ -1,5 +1,5 @@
-import { MoviesService } from './../movies.service';
-import { AuthService } from './../auth.service';
+import { MoviesService } from 'src/app/services/movies.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -1,4 +1,4 @@
-import { MoviesService } from './../movies.service';
+import { MoviesService } from './../../services/movies.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

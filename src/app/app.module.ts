@@ -1,40 +1,44 @@
-import { MoviesComponent } from './movies/movies.component';
-import { TvComponent } from './tv/tv.component';
-import { HomeComponent } from './home/home.component';
-import { NgModule } from '@angular/core';
+import { AboutRoutingModule } from './pages/about/about-routing.module';
+import { TvComponent } from './pages/tv/tv.component';
+import { PeopleComponent } from './pages/people/people.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
+import { MoviesComponent } from './pages/movies/movies.component';
+import { RegisterComponent } from './components/register/register.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
-import { PeopleComponent } from './people/people.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LoginComponent } from './login/login.component';
-import { FooterComponent } from './footer/footer.component';
-import { RegisterComponent } from './register/register.component';
-import { NotfoundComponent } from './notfound/notfound.component';
+import { AboutComponent } from './pages/about/about.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    LoginComponent,
     AboutComponent,
-    PeopleComponent,
-    NavbarComponent,
     FooterComponent,
+    LoginComponent,
+    HomeComponent,
+    NavbarComponent,
+    NotfoundComponent,
     RegisterComponent,
-    TvComponent,
     MoviesComponent,
-    NotfoundComponent
+    GalleryComponent,
+    PeopleComponent,
+    TvComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    AboutRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
